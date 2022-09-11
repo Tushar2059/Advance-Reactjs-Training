@@ -9,10 +9,26 @@ const firstSlice = createSlice({
     reducers:{},
 });
 
+
+const secondSlice = createSlice({
+    name:"secondtStore",
+    initialState:{
+        counter:100
+    },
+    reducers:{
+        incrementCounter: (state)=>
+        {
+           state.counter +=100;
+        },
+    },
+});
+
+export const {incrementCounter} = secondSlice.actions;
+
 //firstSlice.actions;
 const firstStoreReducer =  firstSlice.reducer;
 
 
 export default configureStore({
-    reducer:{firstStore:firstStoreReducer}
+    reducer:{firstStore:firstStoreReducer,secondStore:secondSlice.reducer}
 });
