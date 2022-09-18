@@ -4,11 +4,23 @@ const firstSlice = createSlice({
     name:"firstStore",
     initialState:{
         title:"Project react",
-        message:"Hello react redux"
+        message:"Hello react redux",
+        counter:100,
+        universalCount:100
     },
-    reducers:{},
+    reducers:{
+        incrementCounter1: (state)=>
+        {
+           state.counter +=500;
+        },
+        incrementUniversalCount: (state)=>
+        {
+           state.universalCount +=5;
+        }
+    },
 });
 
+export const {incrementCounter1,incrementUniversalCount} = firstSlice.actions;
 
 const secondSlice = createSlice({
     name:"secondtStore",
